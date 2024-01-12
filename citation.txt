@@ -1,0 +1,7 @@
+@article{REPO248,
+    author = {Sanyal, Soumya and Singh, Harman and Ren, Xiang"},
+    pages = "1075--1093",
+    publisher = "Association for Computational Linguistics",
+    title = "{FaiRR: Faithful and Robust Deductive Reasoning over Natural Language}",
+    year = "2022"
+}
