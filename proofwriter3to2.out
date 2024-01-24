@@ -1,0 +1,51 @@
+nohup: ignoring input
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+0it [00:00, ?it/s]367it [00:00, 3657.20it/s]698it [00:00, 3545.34it/s]875it [00:00, 2197.82it/s]1232it [00:00, 2483.33it/s]1617it [00:00, 2778.46it/s]1885it [00:00, 2502.49it/s]2259it [00:00, 2777.00it/s]2595it [00:00, 2916.87it/s]2959it [00:00, 3061.98it/s]3273it [00:01, 2839.88it/s]3633it [00:01, 3031.61it/s]3953it [00:01, 3079.66it/s]4287it [00:01, 3153.35it/s]4631it [00:01, 3225.63it/s]4973it [00:01, 3280.82it/s]5330it [00:01, 3360.33it/s]5673it [00:01, 3379.02it/s]6056it [00:01, 3500.74it/s]6409it [00:02, 3423.23it/s]6781it [00:02, 3506.70it/s]7134it [00:02, 3433.75it/s]7519it [00:02, 3536.24it/s]7876it [00:02, 3545.50it/s]8248it [00:02, 3592.09it/s]8430it [00:02, 3092.23it/s]
+Processing train split...
+Namespace(dataset='pwur_leq_3_eq_2_name', fairr_model='fairr_rule', world_assump='OWA', arch='roberta_large')
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: train key: rules
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/train/rules.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: train key: facts
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/train/facts.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: train key: ques
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/train/ques.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: train key: answer
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/train/answer.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: train key: proof
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/train/proof.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: train key: qdep
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/train/qdep.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: train key: equiv_id
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/train/equiv_id.pkl
+Processing dev split...
+Namespace(dataset='pwur_leq_3_eq_2_name', fairr_model='fairr_rule', world_assump='OWA', arch='roberta_large')
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: dev key: rules
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/dev/rules.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: dev key: facts
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/dev/facts.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: dev key: ques
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/dev/ques.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: dev key: answer
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/dev/answer.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: dev key: proof
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/dev/proof.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: dev key: qdep
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/dev/qdep.pkl
+Dumping 0 lines for dataset: pwur_leq_3_eq_2_name split: dev key: equiv_id
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/dev/equiv_id.pkl
+Processing test split...
+Namespace(dataset='pwur_leq_3_eq_2_name', fairr_model='fairr_rule', world_assump='OWA', arch='roberta_large')
+Dumping 16860 lines for dataset: pwur_leq_3_eq_2_name split: test key: rules
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/test/rules.pkl
+Dumping 16860 lines for dataset: pwur_leq_3_eq_2_name split: test key: facts
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/test/facts.pkl
+Dumping 16860 lines for dataset: pwur_leq_3_eq_2_name split: test key: ques
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/test/ques.pkl
+Dumping 16860 lines for dataset: pwur_leq_3_eq_2_name split: test key: answer
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/test/answer.pkl
+Dumping 16860 lines for dataset: pwur_leq_3_eq_2_name split: test key: proof
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/test/proof.pkl
+Dumping 16860 lines for dataset: pwur_leq_3_eq_2_name split: test key: qdep
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/test/qdep.pkl
+Dumping 16860 lines for dataset: pwur_leq_3_eq_2_name split: test key: equiv_id
+file writing to = ../data/processed/pwur_leq_3_eq_2_name/OWA/test/equiv_id.pkl

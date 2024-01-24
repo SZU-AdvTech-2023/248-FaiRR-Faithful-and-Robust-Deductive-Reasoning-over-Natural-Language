@@ -1,0 +1,15 @@
+arch: roberta_large
+train_batch_size: 32
+eval_batch_size: 32
+accumulate_grad_batches: 1
+learning_rate: 1.0e-06
+max_epochs: 15
+optimizer: adamw
+adam_epsilon: 1.0e-06
+weight_decay: 0.01
+lr_scheduler: linear_with_warmup
+warmup_updates: 0.1
+freeze_epochs: -1
+gpus: 2
+hf_name: roberta-large
+cls_dropout: 0.1

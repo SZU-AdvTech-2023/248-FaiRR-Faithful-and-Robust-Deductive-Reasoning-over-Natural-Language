@@ -1,0 +1,296 @@
+nohup: ignoring input
+/home/data1/linkiling/wjn/FaiRR-main/main.py:40: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  initialize(config_path="./configs/")
+Global seed set to 42
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+Some weights of the model checkpoint at roberta-large were not used when initializing RobertaModel: ['lm_head.layer_norm.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Some weights of the model checkpoint at roberta-large were not used when initializing RobertaModel: ['lm_head.layer_norm.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Some weights of the model checkpoint at roberta-large were not used when initializing RobertaModel: ['lm_head.layer_norm.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Some weights of the model checkpoint at roberta-large were not used when initializing RobertaModel: ['lm_head.layer_norm.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight', 'lm_head.dense.weight', 'lm_head.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+Composed hydra config:
+
+ scheduler:
+  lr_scheduler: fixed
+  warmup_updates: 0
+optimizer:
+  optimizer: adamw
+  weight_decay: 0.01
+  adam_epsilon: 1.0e-08
+  gradient_clip_val: 0
+model:
+  model: fairr_inference
+  arch: null
+  hf_name: null
+dataset:
+  dataset: pwq_leq_0to3_OWA_rule
+  train_dataset: pwq_leq_0to3_OWA_rule
+  dev_dataset: pwq_leq_0to3_OWA_rule
+  test_dataset: pwq_leq_0to3_OWA_rule
+setup:
+  train_batch_size: 16
+  eval_batch_size: 16
+  accumulate_grad_batches: 1
+  num_workers: 8
+  fp16: false
+  gpus: 1
+training:
+  evaluate_ckpt: true
+  eval_splits: test
+seed: 42
+max_epochs: 10
+learning_rate: 0.001
+save_checkpoint: true
+adam_epsilon: 1.0e-06
+weight_decay: 0.0
+
+Building trainer...
+Loading pwur_leq_3_eq_0_name$attr_OWA dataset
+data being used from the folder = ../data/processed/pwur_leq_3_eq_0_name$attr/OWA/test/
+Loading fairr_inference - None model...
+{'override': 'fairr_inference,evaluate', 'logger': True, 'checkpoint_callback': None, 'enable_checkpointing': True, 'default_root_dir': None, 'gradient_clip_val': 0, 'gradient_clip_algorithm': None, 'process_position': 0, 'num_nodes': 1, 'num_processes': 1, 'devices': None, 'gpus': 1, 'auto_select_gpus': False, 'tpu_cores': None, 'ipus': None, 'log_gpu_memory': None, 'progress_bar_refresh_rate': None, 'enable_progress_bar': True, 'overfit_batches': 0.0, 'track_grad_norm': -1, 'check_val_every_n_epoch': 1, 'fast_dev_run': False, 'accumulate_grad_batches': 1, 'max_epochs': 10, 'min_epochs': None, 'max_steps': -1, 'min_steps': None, 'max_time': None, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0, 'limit_test_batches': 1.0, 'limit_predict_batches': 1.0, 'val_check_interval': 1.0, 'flush_logs_every_n_steps': None, 'log_every_n_steps': 50, 'accelerator': None, 'strategy': None, 'sync_batchnorm': False, 'precision': 32, 'enable_model_summary': True, 'weights_summary': 'top', 'weights_save_path': None, 'num_sanity_val_steps': 2, 'resume_from_checkpoint': None, 'profiler': None, 'benchmark': False, 'deterministic': False, 'reload_dataloaders_every_n_epochs': 0, 'reload_dataloaders_every_epoch': False, 'auto_lr_find': False, 'replace_sampler_ddp': True, 'detect_anomaly': False, 'auto_scale_batch_size': False, 'prepare_data_per_node': None, 'plugins': None, 'amp_backend': 'native', 'amp_level': None, 'move_metrics_to_cpu': False, 'multiple_trainloader_mode': 'max_size_cycle', 'stochastic_weight_avg': False, 'terminate_on_nan': None, 'optimizer': 'adamw', 'model': 'fairr_inference', 'arch': None, 'hf_name': None, 'padding': 0, 'learning_rate': 0.001, 'adam_epsilon': 1e-06, 'warmup_updates': 0, 'weight_decay': 0.0, 'lr_scheduler': 'fixed', 'freeze_epochs': -1, 'train_batch_size': 16, 'eval_batch_size': 16, 'ruleselector_ckpt': '../saved/fairr_ruleselector_pwq_leq_0to3_OWA_rule_roberta_large_27_11_2023_95030f26/checkpoints/epoch=9-step=112779.ckpt', 'factselector_ckpt': '../saved/fairr_factselector_pwq_leq_0to3_OWA_fact_roberta_large_28_11_2023_c3929f14/checkpoints/epoch=8-step=38978.ckpt', 'reasoner_ckpt': '../saved/fairr_reasoner_pw_leq_0to3_OWA_reasoner_t5_large_28_11_2023_0e237b32/checkpoints/epoch=0-step=976.ckpt', 'cls_dropout': 0.1, 'dataset': 'pwur_leq_3_eq_0_name$attr_OWA', 'train_dataset': 'pwq_leq_0to3_OWA_rule', 'dev_dataset': 'pwq_leq_0to3_OWA_rule', 'test_dataset': 'pwq_leq_0to3_OWA_rule', 'num_workers': 8, 'seed': 42, 'name': 'fairr_inference_pwur_leq_3_eq_0_name$attr_OWA_None_05_12_2023_bec5785f', 'log_db': 'manual_runs', 'tag_attrs': 'model,dataset,arch', 'ckpt_path': '', 'eval_splits': 'test', 'debug': False, 'save_checkpoint': True, 'resume_training': False, 'evaluate_ckpt': True, 'fp16': False, 'root_dir': '../saved/fairr_inference_pwur_leq_3_eq_0_name$attr_OWA_None_05_12_2023_bec5785f'}
+Testing the best model...
+Evaluating on split: test
+Testing: 0it [00:00, ?it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 13. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   0%|          | 1/1052 [00:01<23:48,  1.36s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 24. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   0%|          | 2/1052 [00:01<17:16,  1.01it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 31. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   0%|          | 3/1052 [00:01<12:48,  1.36it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 23. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   0%|          | 5/1052 [00:01<09:28,  1.84it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 28. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   1%|          | 6/1052 [00:01<07:13,  2.41it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 17. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   1%|          | 8/1052 [00:02<05:23,  3.23it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 15. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 16. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   1%|          | 10/1052 [00:02<04:10,  4.17it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 33. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   1%|          | 12/1052 [00:02<03:24,  5.08it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 14. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 26. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   1%|▏         | 14/1052 [00:02<02:45,  6.28it/s]Testing:   2%|▏         | 16/1052 [00:02<02:18,  7.49it/s]Testing:   2%|▏         | 18/1052 [00:02<02:03,  8.39it/s]
+Proof Accuracy: 100.0
+
+Testing:   2%|▏         | 20/1052 [00:03<01:59,  8.66it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 25. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   2%|▏         | 22/1052 [00:03<01:49,  9.39it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 18. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   2%|▏         | 24/1052 [00:03<01:42, 10.07it/s]Testing:   2%|▏         | 26/1052 [00:03<01:40, 10.17it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 12. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   3%|▎         | 28/1052 [00:03<01:39, 10.33it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 27. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 29. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   3%|▎         | 30/1052 [00:03<01:39, 10.28it/s]Testing:   3%|▎         | 32/1052 [00:04<01:42, 10.00it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 22. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   3%|▎         | 34/1052 [00:04<01:42,  9.97it/s]Testing:   3%|▎         | 36/1052 [00:04<01:38, 10.35it/s]Testing:   4%|▎         | 38/1052 [00:04<01:28, 11.45it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 32. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+
+Proof Accuracy: 100.0
+
+Testing:   4%|▍         | 40/1052 [00:04<01:28, 11.46it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 20. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   4%|▍         | 42/1052 [00:05<01:29, 11.34it/s]Testing:   4%|▍         | 44/1052 [00:05<01:33, 10.83it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 35. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   4%|▍         | 46/1052 [00:05<01:30, 11.11it/s]Testing:   5%|▍         | 48/1052 [00:05<01:35, 10.54it/s]Testing:   5%|▍         | 50/1052 [00:05<01:41,  9.91it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 11. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   5%|▍         | 52/1052 [00:06<01:37, 10.31it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 21. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   5%|▌         | 54/1052 [00:06<01:33, 10.73it/s]Testing:   5%|▌         | 56/1052 [00:06<01:39, 10.04it/s]Testing:   6%|▌         | 58/1052 [00:06<01:38, 10.07it/s]
+Proof Accuracy: 100.0
+
+Testing:   6%|▌         | 60/1052 [00:06<01:39,  9.92it/s]Testing:   6%|▌         | 62/1052 [00:07<01:42,  9.70it/s]Testing:   6%|▌         | 64/1052 [00:07<01:33, 10.56it/s]Testing:   6%|▋         | 66/1052 [00:07<01:26, 11.39it/s]Testing:   6%|▋         | 68/1052 [00:07<01:33, 10.48it/s]Testing:   7%|▋         | 70/1052 [00:07<01:33, 10.48it/s]Testing:   7%|▋         | 72/1052 [00:07<01:24, 11.53it/s]Testing:   7%|▋         | 74/1052 [00:08<01:29, 10.92it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 30. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   7%|▋         | 76/1052 [00:08<01:26, 11.22it/s]Testing:   7%|▋         | 78/1052 [00:08<01:30, 10.75it/s]
+Proof Accuracy: 100.0
+
+Testing:   8%|▊         | 80/1052 [00:08<01:23, 11.61it/s]Testing:   8%|▊         | 82/1052 [00:08<01:27, 11.13it/s]Testing:   8%|▊         | 84/1052 [00:09<01:25, 11.29it/s]Testing:   8%|▊         | 86/1052 [00:09<01:24, 11.39it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 19. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   8%|▊         | 88/1052 [00:09<01:20, 11.90it/s]Testing:   9%|▊         | 90/1052 [00:09<01:17, 12.42it/s]Testing:   9%|▊         | 92/1052 [00:09<01:24, 11.43it/s]Testing:   9%|▉         | 94/1052 [00:09<01:28, 10.85it/s]Testing:   9%|▉         | 96/1052 [00:10<01:30, 10.52it/s]Testing:   9%|▉         | 98/1052 [00:10<01:27, 10.85it/s]
+Proof Accuracy: 100.0
+
+Testing:  10%|▉         | 100/1052 [00:10<01:26, 11.06it/s]Testing:  10%|▉         | 102/1052 [00:10<01:24, 11.19it/s]Testing:  10%|▉         | 104/1052 [00:10<01:28, 10.66it/s]Testing:  10%|█         | 106/1052 [00:10<01:22, 11.42it/s]Testing:  10%|█         | 108/1052 [00:11<01:17, 12.16it/s]Testing:  10%|█         | 110/1052 [00:11<01:11, 13.20it/s]Testing:  11%|█         | 112/1052 [00:11<01:12, 12.94it/s]Testing:  11%|█         | 114/1052 [00:11<01:20, 11.72it/s]Testing:  11%|█         | 116/1052 [00:11<01:14, 12.55it/s]Testing:  11%|█         | 118/1052 [00:11<01:23, 11.18it/s]
+Proof Accuracy: 99.94791666666667
+
+Testing:  11%|█▏        | 120/1052 [00:12<01:18, 11.91it/s]Testing:  12%|█▏        | 122/1052 [00:12<01:18, 11.88it/s]Testing:  12%|█▏        | 124/1052 [00:12<01:18, 11.87it/s]Testing:  12%|█▏        | 126/1052 [00:12<01:15, 12.28it/s]Testing:  12%|█▏        | 128/1052 [00:12<01:15, 12.17it/s]Testing:  12%|█▏        | 130/1052 [00:12<01:15, 12.15it/s]Testing:  13%|█▎        | 132/1052 [00:13<01:16, 12.02it/s]Testing:  13%|█▎        | 134/1052 [00:13<01:17, 11.84it/s]Testing:  13%|█▎        | 136/1052 [00:13<01:13, 12.49it/s]Testing:  13%|█▎        | 138/1052 [00:13<01:14, 12.28it/s]
+Proof Accuracy: 99.86607142857143
+
+Testing:  13%|█▎        | 140/1052 [00:13<01:17, 11.70it/s]Testing:  13%|█▎        | 142/1052 [00:13<01:16, 11.82it/s]Testing:  14%|█▎        | 144/1052 [00:14<01:19, 11.39it/s]Testing:  14%|█▍        | 146/1052 [00:14<01:22, 11.00it/s]Testing:  14%|█▍        | 148/1052 [00:14<01:23, 10.85it/s]Testing:  14%|█▍        | 150/1052 [00:14<01:28, 10.18it/s]Testing:  14%|█▍        | 152/1052 [00:14<01:30,  9.98it/s]Testing:  15%|█▍        | 154/1052 [00:15<01:30,  9.90it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 36. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  15%|█▍        | 155/1052 [00:15<01:32,  9.69it/s]Testing:  15%|█▍        | 156/1052 [00:15<01:34,  9.47it/s]Testing:  15%|█▌        | 158/1052 [00:15<01:23, 10.65it/s]
+Proof Accuracy: 99.8828125
+
+Testing:  15%|█▌        | 160/1052 [00:15<01:18, 11.33it/s]Testing:  15%|█▌        | 162/1052 [00:15<01:23, 10.63it/s]Testing:  16%|█▌        | 164/1052 [00:15<01:16, 11.65it/s]Testing:  16%|█▌        | 166/1052 [00:16<01:15, 11.67it/s]Testing:  16%|█▌        | 168/1052 [00:16<01:16, 11.58it/s]Testing:  16%|█▌        | 170/1052 [00:16<01:21, 10.79it/s]Testing:  16%|█▋        | 172/1052 [00:16<01:21, 10.86it/s]Testing:  17%|█▋        | 174/1052 [00:16<01:29,  9.82it/s]Testing:  17%|█▋        | 176/1052 [00:17<01:27,  9.97it/s]Testing:  17%|█▋        | 178/1052 [00:17<01:25, 10.17it/s]
+Proof Accuracy: 99.82638888888889
+
+Testing:  17%|█▋        | 180/1052 [00:17<01:18, 11.09it/s]Testing:  17%|█▋        | 182/1052 [00:17<01:19, 10.98it/s]Testing:  17%|█▋        | 184/1052 [00:17<01:14, 11.63it/s]Testing:  18%|█▊        | 186/1052 [00:18<01:13, 11.72it/s]Testing:  18%|█▊        | 188/1052 [00:18<01:06, 12.93it/s]Testing:  18%|█▊        | 190/1052 [00:18<01:09, 12.49it/s]Testing:  18%|█▊        | 192/1052 [00:18<01:08, 12.53it/s]Testing:  18%|█▊        | 194/1052 [00:18<01:13, 11.74it/s]Testing:  19%|█▊        | 196/1052 [00:18<01:17, 11.08it/s]Testing:  19%|█▉        | 198/1052 [00:19<01:19, 10.72it/s]
+Proof Accuracy: 99.84375
+
+Testing:  19%|█▉        | 200/1052 [00:19<01:21, 10.40it/s]Testing:  19%|█▉        | 202/1052 [00:19<01:25, 10.00it/s]Testing:  19%|█▉        | 204/1052 [00:19<01:26,  9.76it/s]Testing:  20%|█▉        | 206/1052 [00:19<01:23, 10.12it/s]Testing:  20%|█▉        | 208/1052 [00:20<01:28,  9.55it/s]Testing:  20%|█▉        | 209/1052 [00:20<01:31,  9.25it/s]Testing:  20%|█▉        | 210/1052 [00:20<01:34,  8.96it/s]Testing:  20%|██        | 212/1052 [00:20<01:30,  9.24it/s]Testing:  20%|██        | 213/1052 [00:20<01:30,  9.31it/s]Testing:  20%|██        | 214/1052 [00:20<01:29,  9.35it/s]Testing:  20%|██        | 215/1052 [00:20<01:28,  9.50it/s]Testing:  21%|██        | 217/1052 [00:21<01:23, 10.05it/s]Testing:  21%|██        | 219/1052 [00:21<01:16, 10.85it/s]
+Proof Accuracy: 99.85795454545455
+
+Testing:  21%|██        | 221/1052 [00:21<01:14, 11.09it/s]Testing:  21%|██        | 223/1052 [00:21<01:13, 11.34it/s]Testing:  21%|██▏       | 225/1052 [00:21<01:14, 11.12it/s]Testing:  22%|██▏       | 227/1052 [00:21<01:19, 10.34it/s]Testing:  22%|██▏       | 229/1052 [00:22<01:19, 10.37it/s]Testing:  22%|██▏       | 231/1052 [00:22<01:23,  9.84it/s]Testing:  22%|██▏       | 233/1052 [00:22<01:14, 11.02it/s]Testing:  22%|██▏       | 235/1052 [00:22<01:14, 11.01it/s]Testing:  23%|██▎       | 237/1052 [00:22<01:17, 10.52it/s]Testing:  23%|██▎       | 239/1052 [00:23<01:20, 10.15it/s]
+Proof Accuracy: 99.86979166666667
+
+Testing:  23%|██▎       | 241/1052 [00:23<01:17, 10.48it/s]Testing:  23%|██▎       | 243/1052 [00:23<01:17, 10.39it/s]Testing:  23%|██▎       | 245/1052 [00:23<01:12, 11.08it/s]Testing:  23%|██▎       | 247/1052 [00:23<01:16, 10.58it/s]Testing:  24%|██▎       | 249/1052 [00:24<01:16, 10.53it/s]Testing:  24%|██▍       | 251/1052 [00:24<01:25,  9.33it/s]Testing:  24%|██▍       | 253/1052 [00:24<01:18, 10.17it/s]Testing:  24%|██▍       | 255/1052 [00:24<01:15, 10.51it/s]Testing:  24%|██▍       | 257/1052 [00:24<01:14, 10.62it/s]Testing:  25%|██▍       | 259/1052 [00:24<01:08, 11.54it/s]
+Proof Accuracy: 99.8798076923077
+
+Testing:  25%|██▍       | 261/1052 [00:25<01:11, 11.13it/s]Testing:  25%|██▌       | 263/1052 [00:25<01:12, 10.93it/s]Testing:  25%|██▌       | 265/1052 [00:25<01:14, 10.51it/s]Testing:  25%|██▌       | 267/1052 [00:25<01:12, 10.86it/s]Testing:  26%|██▌       | 269/1052 [00:25<01:13, 10.59it/s]Testing:  26%|██▌       | 271/1052 [00:26<01:06, 11.71it/s]Testing:  26%|██▌       | 273/1052 [00:26<01:08, 11.36it/s]Testing:  26%|██▌       | 275/1052 [00:26<01:05, 11.78it/s]Testing:  26%|██▋       | 277/1052 [00:26<01:02, 12.31it/s]Testing:  27%|██▋       | 279/1052 [00:26<00:58, 13.20it/s]
+Proof Accuracy: 99.86607142857143
+
+Testing:  27%|██▋       | 281/1052 [00:26<01:00, 12.84it/s]Testing:  27%|██▋       | 283/1052 [00:27<01:03, 12.04it/s]Testing:  27%|██▋       | 285/1052 [00:27<01:10, 10.90it/s]Testing:  27%|██▋       | 287/1052 [00:27<01:11, 10.64it/s]Testing:  27%|██▋       | 289/1052 [00:27<01:09, 10.98it/s]Testing:  28%|██▊       | 291/1052 [00:27<01:14, 10.24it/s]Testing:  28%|██▊       | 293/1052 [00:28<01:18,  9.72it/s]Testing:  28%|██▊       | 295/1052 [00:28<01:16,  9.86it/s]Testing:  28%|██▊       | 297/1052 [00:28<01:15,  9.97it/s]Testing:  28%|██▊       | 299/1052 [00:28<01:12, 10.40it/s]
+Proof Accuracy: 99.83333333333333
+
+Testing:  29%|██▊       | 301/1052 [00:28<01:07, 11.20it/s]Testing:  29%|██▉       | 303/1052 [00:28<01:00, 12.48it/s]Testing:  29%|██▉       | 305/1052 [00:29<01:03, 11.71it/s]Testing:  29%|██▉       | 307/1052 [00:29<01:03, 11.75it/s]Testing:  29%|██▉       | 309/1052 [00:29<00:59, 12.41it/s]Testing:  30%|██▉       | 311/1052 [00:29<01:01, 11.98it/s]Testing:  30%|██▉       | 313/1052 [00:29<01:01, 12.00it/s]Testing:  30%|██▉       | 315/1052 [00:29<01:00, 12.08it/s]Testing:  30%|███       | 317/1052 [00:30<00:57, 12.88it/s]Testing:  30%|███       | 319/1052 [00:30<00:55, 13.28it/s]
+Proof Accuracy: 99.84375
+
+Testing:  31%|███       | 321/1052 [00:30<00:59, 12.37it/s]Testing:  31%|███       | 323/1052 [00:30<01:05, 11.20it/s]Testing:  31%|███       | 325/1052 [00:30<01:07, 10.73it/s]Testing:  31%|███       | 327/1052 [00:30<01:05, 11.04it/s]Testing:  31%|███▏      | 329/1052 [00:31<01:11, 10.18it/s]Testing:  31%|███▏      | 331/1052 [00:31<01:11, 10.02it/s]Testing:  32%|███▏      | 333/1052 [00:31<01:14,  9.62it/s]Testing:  32%|███▏      | 335/1052 [00:31<01:09, 10.27it/s]Testing:  32%|███▏      | 337/1052 [00:31<01:04, 11.10it/s]Testing:  32%|███▏      | 339/1052 [00:32<01:00, 11.88it/s]
+Proof Accuracy: 99.8345588235294
+
+Testing:  32%|███▏      | 341/1052 [00:32<01:06, 10.67it/s]Testing:  33%|███▎      | 343/1052 [00:32<01:00, 11.70it/s]Testing:  33%|███▎      | 345/1052 [00:32<00:59, 11.79it/s]Testing:  33%|███▎      | 347/1052 [00:32<01:03, 11.17it/s]Testing:  33%|███▎      | 349/1052 [00:32<00:59, 11.79it/s]Testing:  33%|███▎      | 351/1052 [00:33<00:55, 12.59it/s]Testing:  34%|███▎      | 353/1052 [00:33<00:55, 12.67it/s]Testing:  34%|███▎      | 355/1052 [00:33<01:01, 11.33it/s]Testing:  34%|███▍      | 357/1052 [00:33<01:02, 11.11it/s]Testing:  34%|███▍      | 359/1052 [00:33<01:06, 10.48it/s]
+Proof Accuracy: 99.84375
+
+Testing:  34%|███▍      | 361/1052 [00:34<01:11,  9.70it/s]Testing:  35%|███▍      | 363/1052 [00:34<01:11,  9.62it/s]Testing:  35%|███▍      | 365/1052 [00:34<01:05, 10.55it/s]Testing:  35%|███▍      | 367/1052 [00:34<01:00, 11.40it/s]Testing:  35%|███▌      | 369/1052 [00:34<00:56, 12.00it/s]Testing:  35%|███▌      | 371/1052 [00:35<01:07, 10.04it/s]Testing:  35%|███▌      | 373/1052 [00:35<01:06, 10.21it/s]Testing:  36%|███▌      | 375/1052 [00:35<01:01, 11.01it/s]Testing:  36%|███▌      | 377/1052 [00:35<01:05, 10.24it/s]Testing:  36%|███▌      | 379/1052 [00:35<01:08,  9.86it/s]
+Proof Accuracy: 99.81907894736842
+
+Testing:  36%|███▌      | 381/1052 [00:35<01:05, 10.19it/s]Testing:  36%|███▋      | 383/1052 [00:36<01:07,  9.98it/s]Testing:  37%|███▋      | 385/1052 [00:36<01:02, 10.69it/s]Testing:  37%|███▋      | 387/1052 [00:36<01:00, 11.03it/s]Testing:  37%|███▋      | 389/1052 [00:36<01:01, 10.78it/s]Testing:  37%|███▋      | 391/1052 [00:36<01:02, 10.52it/s]Testing:  37%|███▋      | 393/1052 [00:37<01:03, 10.43it/s]Testing:  38%|███▊      | 395/1052 [00:37<01:05, 10.00it/s]Testing:  38%|███▊      | 397/1052 [00:37<01:08,  9.51it/s]Testing:  38%|███▊      | 398/1052 [00:37<01:14,  8.76it/s]
+Proof Accuracy: 99.828125
+
+Testing:  38%|███▊      | 400/1052 [00:37<01:09,  9.35it/s]Testing:  38%|███▊      | 403/1052 [00:38<00:59, 10.83it/s]Testing:  38%|███▊      | 405/1052 [00:38<01:03, 10.14it/s]Testing:  39%|███▊      | 407/1052 [00:38<01:02, 10.29it/s]Testing:  39%|███▉      | 409/1052 [00:38<01:00, 10.70it/s]Testing:  39%|███▉      | 411/1052 [00:38<00:58, 10.91it/s]Testing:  39%|███▉      | 413/1052 [00:39<01:00, 10.51it/s]Testing:  39%|███▉      | 415/1052 [00:39<01:03, 10.01it/s]Testing:  40%|███▉      | 417/1052 [00:39<00:59, 10.74it/s]Testing:  40%|███▉      | 419/1052 [00:39<01:02, 10.18it/s]
+Proof Accuracy: 99.83630952380952
+
+Testing:  40%|████      | 421/1052 [00:39<01:03,  9.95it/s]Testing:  40%|████      | 423/1052 [00:40<01:01, 10.20it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 43. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  40%|████      | 425/1052 [00:40<01:00, 10.30it/s]Testing:  41%|████      | 427/1052 [00:40<00:59, 10.46it/s]Testing:  41%|████      | 429/1052 [00:40<00:59, 10.54it/s]Testing:  41%|████      | 431/1052 [00:40<01:01, 10.03it/s]Testing:  41%|████      | 433/1052 [00:40<00:58, 10.53it/s]Testing:  41%|████▏     | 435/1052 [00:41<00:58, 10.47it/s]Testing:  42%|████▏     | 437/1052 [00:41<00:58, 10.53it/s]Testing:  42%|████▏     | 439/1052 [00:41<00:53, 11.36it/s]
+Proof Accuracy: 99.84375
+
+Testing:  42%|████▏     | 441/1052 [00:41<00:49, 12.23it/s]Testing:  42%|████▏     | 443/1052 [00:41<00:55, 11.02it/s]Testing:  42%|████▏     | 445/1052 [00:42<00:53, 11.28it/s]Testing:  42%|████▏     | 447/1052 [00:42<00:54, 11.01it/s]Testing:  43%|████▎     | 449/1052 [00:42<00:56, 10.75it/s]Testing:  43%|████▎     | 451/1052 [00:42<00:57, 10.42it/s]Testing:  43%|████▎     | 453/1052 [00:42<00:56, 10.57it/s]Testing:  43%|████▎     | 455/1052 [00:42<00:55, 10.78it/s]Testing:  43%|████▎     | 457/1052 [00:43<00:53, 11.22it/s]Testing:  44%|████▎     | 459/1052 [00:43<00:49, 12.02it/s]
+Proof Accuracy: 99.85054347826087
+
+Testing:  44%|████▍     | 461/1052 [00:43<00:49, 11.88it/s]Testing:  44%|████▍     | 463/1052 [00:43<00:51, 11.35it/s]Testing:  44%|████▍     | 465/1052 [00:43<00:48, 12.21it/s]Testing:  44%|████▍     | 467/1052 [00:43<00:46, 12.69it/s]Testing:  45%|████▍     | 469/1052 [00:44<00:47, 12.34it/s]Testing:  45%|████▍     | 471/1052 [00:44<00:57, 10.02it/s]Testing:  45%|████▍     | 473/1052 [00:44<00:55, 10.46it/s]Testing:  45%|████▌     | 475/1052 [00:44<00:56, 10.18it/s]Testing:  45%|████▌     | 477/1052 [00:44<00:54, 10.60it/s]Testing:  46%|████▌     | 479/1052 [00:45<00:53, 10.74it/s]
+Proof Accuracy: 99.85677083333333
+
+Testing:  46%|████▌     | 481/1052 [00:45<00:54, 10.54it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 38. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  46%|████▌     | 483/1052 [00:45<00:54, 10.40it/s]Testing:  46%|████▌     | 485/1052 [00:45<00:56, 10.02it/s]Testing:  46%|████▋     | 487/1052 [00:45<00:56, 10.02it/s]Testing:  46%|████▋     | 489/1052 [00:46<00:56, 10.05it/s]Testing:  47%|████▋     | 491/1052 [00:46<00:55, 10.14it/s]Testing:  47%|████▋     | 493/1052 [00:46<00:54, 10.25it/s]Testing:  47%|████▋     | 495/1052 [00:46<00:49, 11.29it/s]Testing:  47%|████▋     | 497/1052 [00:46<00:53, 10.32it/s]Testing:  47%|████▋     | 499/1052 [00:47<00:49, 11.15it/s]
+Proof Accuracy: 99.8625
+
+Testing:  48%|████▊     | 501/1052 [00:47<00:46, 11.87it/s]Testing:  48%|████▊     | 503/1052 [00:47<00:45, 12.20it/s]Testing:  48%|████▊     | 505/1052 [00:47<00:44, 12.25it/s]Testing:  48%|████▊     | 507/1052 [00:47<00:43, 12.54it/s]Testing:  48%|████▊     | 509/1052 [00:47<00:47, 11.55it/s]Testing:  49%|████▊     | 511/1052 [00:48<00:47, 11.39it/s]Testing:  49%|████▉     | 513/1052 [00:48<00:48, 11.19it/s]Testing:  49%|████▉     | 515/1052 [00:48<00:48, 11.15it/s]Testing:  49%|████▉     | 517/1052 [00:48<00:48, 10.99it/s]Testing:  49%|████▉     | 519/1052 [00:48<00:48, 11.07it/s]
+Proof Accuracy: 99.86778846153847
+
+Testing:  50%|████▉     | 521/1052 [00:48<00:48, 10.86it/s]Testing:  50%|████▉     | 523/1052 [00:49<00:45, 11.59it/s]Testing:  50%|████▉     | 525/1052 [00:49<00:48, 10.91it/s]Testing:  50%|█████     | 527/1052 [00:49<00:48, 10.75it/s]Testing:  50%|█████     | 529/1052 [00:49<00:47, 10.91it/s]Testing:  50%|█████     | 531/1052 [00:49<00:49, 10.57it/s]Testing:  51%|█████     | 533/1052 [00:50<00:48, 10.72it/s]Testing:  51%|█████     | 535/1052 [00:50<00:48, 10.75it/s]Testing:  51%|█████     | 537/1052 [00:50<00:45, 11.34it/s]Testing:  51%|█████     | 539/1052 [00:50<00:41, 12.30it/s]
+Proof Accuracy: 99.87268518518519
+
+Testing:  51%|█████▏    | 541/1052 [00:50<00:39, 12.90it/s]Testing:  52%|█████▏    | 543/1052 [00:50<00:39, 12.99it/s]Testing:  52%|█████▏    | 545/1052 [00:50<00:42, 11.92it/s]Testing:  52%|█████▏    | 547/1052 [00:51<00:45, 10.98it/s]Testing:  52%|█████▏    | 549/1052 [00:51<00:42, 11.80it/s]Testing:  52%|█████▏    | 551/1052 [00:51<00:45, 11.10it/s]Testing:  53%|█████▎    | 553/1052 [00:51<00:41, 12.07it/s]Testing:  53%|█████▎    | 555/1052 [00:51<00:40, 12.39it/s]Testing:  53%|█████▎    | 557/1052 [00:52<00:40, 12.36it/s]Testing:  53%|█████▎    | 559/1052 [00:52<00:36, 13.63it/s]
+Proof Accuracy: 99.87723214285714
+
+Testing:  53%|█████▎    | 561/1052 [00:52<00:36, 13.49it/s]Testing:  54%|█████▎    | 563/1052 [00:52<00:41, 11.85it/s]Testing:  54%|█████▎    | 565/1052 [00:52<00:42, 11.33it/s]Testing:  54%|█████▍    | 567/1052 [00:52<00:39, 12.20it/s]Testing:  54%|█████▍    | 569/1052 [00:53<00:44, 10.76it/s]Testing:  54%|█████▍    | 571/1052 [00:53<00:44, 10.83it/s]Testing:  54%|█████▍    | 573/1052 [00:53<00:41, 11.61it/s]Testing:  55%|█████▍    | 575/1052 [00:53<00:39, 11.97it/s]Testing:  55%|█████▍    | 577/1052 [00:53<00:40, 11.72it/s]Testing:  55%|█████▌    | 579/1052 [00:53<00:46, 10.14it/s]
+Proof Accuracy: 99.87068965517241
+
+Testing:  55%|█████▌    | 581/1052 [00:54<00:39, 11.79it/s]Testing:  55%|█████▌    | 583/1052 [00:54<00:40, 11.68it/s]Testing:  56%|█████▌    | 585/1052 [00:54<00:36, 12.68it/s]Testing:  56%|█████▌    | 587/1052 [00:54<00:40, 11.60it/s]Testing:  56%|█████▌    | 589/1052 [00:54<00:39, 11.60it/s]Testing:  56%|█████▌    | 591/1052 [00:54<00:40, 11.25it/s]Testing:  56%|█████▋    | 593/1052 [00:55<00:37, 12.23it/s]Testing:  57%|█████▋    | 595/1052 [00:55<00:36, 12.46it/s]Testing:  57%|█████▋    | 597/1052 [00:55<00:38, 11.69it/s]Testing:  57%|█████▋    | 599/1052 [00:55<00:38, 11.64it/s]
+Proof Accuracy: 99.85416666666667
+
+Testing:  57%|█████▋    | 601/1052 [00:55<00:38, 11.63it/s]Testing:  57%|█████▋    | 603/1052 [00:55<00:37, 12.07it/s]Testing:  58%|█████▊    | 605/1052 [00:56<00:36, 12.40it/s]Testing:  58%|█████▊    | 607/1052 [00:56<00:35, 12.68it/s]Testing:  58%|█████▊    | 609/1052 [00:56<00:34, 13.02it/s]Testing:  58%|█████▊    | 611/1052 [00:56<00:39, 11.30it/s]Testing:  58%|█████▊    | 613/1052 [00:56<00:37, 11.67it/s]Testing:  58%|█████▊    | 615/1052 [00:56<00:38, 11.40it/s]Testing:  59%|█████▊    | 617/1052 [00:57<00:37, 11.45it/s]Testing:  59%|█████▉    | 619/1052 [00:57<00:38, 11.31it/s]
+Proof Accuracy: 99.85887096774194
+
+Testing:  59%|█████▉    | 621/1052 [00:57<00:43,  9.96it/s]Testing:  59%|█████▉    | 623/1052 [00:57<00:45,  9.44it/s]Testing:  59%|█████▉    | 624/1052 [00:57<00:44,  9.60it/s]Testing:  59%|█████▉    | 625/1052 [00:58<00:46,  9.18it/s]Testing:  60%|█████▉    | 626/1052 [00:58<00:47,  9.01it/s]Testing:  60%|█████▉    | 628/1052 [00:58<00:42,  9.89it/s]Testing:  60%|█████▉    | 630/1052 [00:58<00:39, 10.72it/s]Testing:  60%|██████    | 632/1052 [00:58<00:36, 11.45it/s]Testing:  60%|██████    | 634/1052 [00:58<00:37, 11.29it/s]Testing:  60%|██████    | 636/1052 [00:58<00:38, 10.70it/s]Testing:  61%|██████    | 638/1052 [00:59<00:38, 10.83it/s]
+Proof Accuracy: 99.84375
+
+Testing:  61%|██████    | 640/1052 [00:59<00:40, 10.16it/s]Testing:  61%|██████    | 642/1052 [00:59<00:41,  9.81it/s]Testing:  61%|██████    | 644/1052 [00:59<00:39, 10.27it/s]Testing:  61%|██████▏   | 646/1052 [00:59<00:41,  9.89it/s]Testing:  62%|██████▏   | 648/1052 [01:00<00:39, 10.27it/s]Testing:  62%|██████▏   | 650/1052 [01:00<00:41,  9.78it/s]Testing:  62%|██████▏   | 651/1052 [01:00<00:41,  9.73it/s]Testing:  62%|██████▏   | 652/1052 [01:00<00:41,  9.75it/s]Testing:  62%|██████▏   | 654/1052 [01:00<00:36, 10.93it/s]Testing:  62%|██████▏   | 656/1052 [01:00<00:35, 11.30it/s]Testing:  63%|██████▎   | 658/1052 [01:01<00:35, 10.95it/s]
+Proof Accuracy: 99.84848484848484
+
+Testing:  63%|██████▎   | 660/1052 [01:01<00:36, 10.72it/s]Testing:  63%|██████▎   | 662/1052 [01:01<00:37, 10.33it/s]Testing:  63%|██████▎   | 664/1052 [01:01<00:35, 11.03it/s]Testing:  63%|██████▎   | 666/1052 [01:01<00:36, 10.60it/s]Testing:  63%|██████▎   | 668/1052 [01:02<00:35, 10.72it/s]Testing:  64%|██████▎   | 670/1052 [01:02<00:38, 10.05it/s]Testing:  64%|██████▍   | 672/1052 [01:02<00:34, 11.02it/s]Testing:  64%|██████▍   | 674/1052 [01:02<00:31, 11.87it/s]Testing:  64%|██████▍   | 676/1052 [01:02<00:29, 12.72it/s]Testing:  64%|██████▍   | 678/1052 [01:02<00:29, 12.82it/s]
+Proof Accuracy: 99.8529411764706
+
+Testing:  65%|██████▍   | 680/1052 [01:03<00:30, 12.40it/s]Testing:  65%|██████▍   | 682/1052 [01:03<00:30, 11.98it/s]Testing:  65%|██████▌   | 684/1052 [01:03<00:32, 11.36it/s]Testing:  65%|██████▌   | 686/1052 [01:03<00:30, 11.81it/s]Testing:  65%|██████▌   | 688/1052 [01:03<00:31, 11.54it/s]Testing:  66%|██████▌   | 690/1052 [01:03<00:29, 12.08it/s]Testing:  66%|██████▌   | 692/1052 [01:03<00:27, 12.86it/s]Testing:  66%|██████▌   | 694/1052 [01:04<00:29, 12.34it/s]Testing:  66%|██████▌   | 696/1052 [01:04<00:32, 10.98it/s]Testing:  66%|██████▋   | 698/1052 [01:04<00:31, 11.19it/s]
+Proof Accuracy: 99.85714285714286
+
+Testing:  67%|██████▋   | 700/1052 [01:04<00:30, 11.69it/s]Testing:  67%|██████▋   | 702/1052 [01:04<00:30, 11.62it/s]Testing:  67%|██████▋   | 704/1052 [01:05<00:32, 10.57it/s]Testing:  67%|██████▋   | 706/1052 [01:05<00:32, 10.52it/s]Testing:  67%|██████▋   | 708/1052 [01:05<00:32, 10.52it/s]Testing:  67%|██████▋   | 710/1052 [01:05<00:31, 10.80it/s]Testing:  68%|██████▊   | 712/1052 [01:05<00:31, 10.63it/s]Testing:  68%|██████▊   | 714/1052 [01:06<00:34,  9.90it/s]Testing:  68%|██████▊   | 716/1052 [01:06<00:33,  9.99it/s]Testing:  68%|██████▊   | 718/1052 [01:06<00:30, 10.80it/s]
+Proof Accuracy: 99.85243055555556
+
+Testing:  68%|██████▊   | 720/1052 [01:06<00:29, 11.10it/s]Testing:  69%|██████▊   | 722/1052 [01:06<00:30, 10.89it/s]Testing:  69%|██████▉   | 724/1052 [01:07<00:31, 10.57it/s]Testing:  69%|██████▉   | 726/1052 [01:07<00:31, 10.39it/s]Testing:  69%|██████▉   | 728/1052 [01:07<00:43,  7.51it/s]Testing:  69%|██████▉   | 730/1052 [01:07<00:38,  8.32it/s]Testing:  69%|██████▉   | 731/1052 [01:07<00:36,  8.72it/s]Testing:  70%|██████▉   | 732/1052 [01:08<00:35,  8.90it/s]Testing:  70%|██████▉   | 733/1052 [01:08<00:35,  9.08it/s]Testing:  70%|██████▉   | 734/1052 [01:08<00:38,  8.30it/s]Testing:  70%|██████▉   | 735/1052 [01:08<00:40,  7.81it/s]Testing:  70%|██████▉   | 736/1052 [01:08<00:38,  8.29it/s]Testing:  70%|███████   | 737/1052 [01:08<00:36,  8.61it/s]Testing:  70%|███████   | 739/1052 [01:08<00:31,  9.80it/s]
+Proof Accuracy: 99.85641891891892
+
+Testing:  70%|███████   | 741/1052 [01:08<00:29, 10.54it/s]Testing:  71%|███████   | 743/1052 [01:09<00:25, 11.90it/s]Testing:  71%|███████   | 745/1052 [01:09<00:29, 10.51it/s]Testing:  71%|███████   | 747/1052 [01:09<00:30,  9.93it/s]Testing:  71%|███████   | 749/1052 [01:09<00:29, 10.35it/s]Testing:  71%|███████▏  | 751/1052 [01:09<00:30,  9.77it/s]Testing:  72%|███████▏  | 753/1052 [01:10<00:31,  9.62it/s]Testing:  72%|███████▏  | 754/1052 [01:10<00:33,  8.79it/s]Testing:  72%|███████▏  | 755/1052 [01:10<00:36,  8.23it/s]Testing:  72%|███████▏  | 757/1052 [01:10<00:32,  9.01it/s]Testing:  72%|███████▏  | 759/1052 [01:10<00:30,  9.58it/s]
+Proof Accuracy: 99.86019736842105
+
+Testing:  72%|███████▏  | 761/1052 [01:10<00:29,  9.91it/s]Testing:  73%|███████▎  | 763/1052 [01:11<00:28, 10.16it/s]Testing:  73%|███████▎  | 765/1052 [01:11<00:25, 11.19it/s]Testing:  73%|███████▎  | 767/1052 [01:11<00:24, 11.79it/s]Testing:  73%|███████▎  | 769/1052 [01:11<00:23, 11.82it/s]Testing:  73%|███████▎  | 771/1052 [01:11<00:23, 11.89it/s]Testing:  73%|███████▎  | 773/1052 [01:11<00:25, 11.00it/s]Testing:  74%|███████▎  | 775/1052 [01:12<00:25, 10.97it/s]Testing:  74%|███████▍  | 777/1052 [01:12<00:24, 11.02it/s]Testing:  74%|███████▍  | 779/1052 [01:12<00:25, 10.63it/s]
+Proof Accuracy: 99.86378205128206
+
+Testing:  74%|███████▍  | 781/1052 [01:12<00:27, 10.04it/s]Testing:  74%|███████▍  | 783/1052 [01:12<00:24, 11.07it/s]Testing:  75%|███████▍  | 785/1052 [01:13<00:23, 11.32it/s]Testing:  75%|███████▍  | 787/1052 [01:13<00:24, 10.77it/s]Testing:  75%|███████▌  | 789/1052 [01:13<00:23, 11.01it/s]Testing:  75%|███████▌  | 791/1052 [01:13<00:21, 12.03it/s]Testing:  75%|███████▌  | 793/1052 [01:13<00:21, 12.18it/s]Testing:  76%|███████▌  | 795/1052 [01:13<00:19, 13.07it/s]Testing:  76%|███████▌  | 797/1052 [01:14<00:20, 12.27it/s]Testing:  76%|███████▌  | 799/1052 [01:14<00:23, 10.93it/s]
+Proof Accuracy: 99.859375
+
+Testing:  76%|███████▌  | 801/1052 [01:14<00:22, 11.03it/s]Testing:  76%|███████▋  | 803/1052 [01:14<00:22, 10.93it/s]Testing:  77%|███████▋  | 805/1052 [01:14<00:24, 10.20it/s]Testing:  77%|███████▋  | 807/1052 [01:15<00:24, 10.12it/s]Testing:  77%|███████▋  | 809/1052 [01:15<00:24,  9.74it/s]Testing:  77%|███████▋  | 810/1052 [01:15<00:25,  9.33it/s]Testing:  77%|███████▋  | 812/1052 [01:15<00:23, 10.09it/s]Testing:  77%|███████▋  | 814/1052 [01:15<00:21, 11.08it/s]Testing:  78%|███████▊  | 816/1052 [01:15<00:20, 11.50it/s]Testing:  78%|███████▊  | 818/1052 [01:16<00:22, 10.61it/s]
+Proof Accuracy: 99.85518292682927
+
+Testing:  78%|███████▊  | 820/1052 [01:16<00:20, 11.05it/s]Testing:  78%|███████▊  | 822/1052 [01:16<00:21, 10.60it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 34. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  78%|███████▊  | 824/1052 [01:16<00:23,  9.90it/s]Testing:  79%|███████▊  | 826/1052 [01:16<00:20, 10.79it/s]Testing:  79%|███████▊  | 828/1052 [01:17<00:20, 11.08it/s]Testing:  79%|███████▉  | 830/1052 [01:17<00:21, 10.21it/s]Testing:  79%|███████▉  | 832/1052 [01:17<00:20, 10.58it/s]Testing:  79%|███████▉  | 834/1052 [01:17<00:19, 11.37it/s]Testing:  79%|███████▉  | 836/1052 [01:17<00:19, 11.01it/s]Testing:  80%|███████▉  | 838/1052 [01:17<00:19, 10.91it/s]
+Proof Accuracy: 99.85863095238095
+
+Testing:  80%|███████▉  | 840/1052 [01:18<00:19, 11.05it/s]Testing:  80%|████████  | 842/1052 [01:18<00:17, 11.94it/s]Testing:  80%|████████  | 844/1052 [01:18<00:17, 11.58it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 39. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  80%|████████  | 846/1052 [01:18<00:18, 11.08it/s]Testing:  81%|████████  | 848/1052 [01:18<00:18, 11.19it/s]Testing:  81%|████████  | 850/1052 [01:18<00:17, 11.43it/s]Testing:  81%|████████  | 852/1052 [01:19<00:16, 12.31it/s]Testing:  81%|████████  | 854/1052 [01:19<00:16, 11.96it/s]Testing:  81%|████████▏ | 856/1052 [01:19<00:17, 11.36it/s]Testing:  82%|████████▏ | 858/1052 [01:19<00:15, 12.62it/s]
+Proof Accuracy: 99.84738372093024
+
+Testing:  82%|████████▏ | 860/1052 [01:19<00:15, 12.65it/s]Testing:  82%|████████▏ | 862/1052 [01:19<00:14, 12.81it/s]Testing:  82%|████████▏ | 864/1052 [01:20<00:16, 11.55it/s]Testing:  82%|████████▏ | 866/1052 [01:20<00:17, 10.76it/s]Testing:  83%|████████▎ | 868/1052 [01:20<00:16, 11.10it/s]Testing:  83%|████████▎ | 870/1052 [01:20<00:16, 11.13it/s]Testing:  83%|████████▎ | 872/1052 [01:20<00:16, 10.69it/s]Testing:  83%|████████▎ | 874/1052 [01:21<00:16, 10.83it/s]Testing:  83%|████████▎ | 876/1052 [01:21<00:16, 10.45it/s]Testing:  83%|████████▎ | 878/1052 [01:21<00:16, 10.80it/s]
+Proof Accuracy: 99.85085227272727
+
+Testing:  84%|████████▎ | 880/1052 [01:21<00:16, 10.13it/s]Testing:  84%|████████▍ | 882/1052 [01:21<00:16, 10.55it/s]Testing:  84%|████████▍ | 884/1052 [01:22<00:15, 10.95it/s]Testing:  84%|████████▍ | 886/1052 [01:22<00:14, 11.46it/s]Testing:  84%|████████▍ | 888/1052 [01:22<00:14, 11.04it/s]Testing:  85%|████████▍ | 890/1052 [01:22<00:14, 11.28it/s]Testing:  85%|████████▍ | 892/1052 [01:22<00:14, 11.01it/s]Testing:  85%|████████▍ | 894/1052 [01:22<00:14, 10.70it/s]Testing:  85%|████████▌ | 896/1052 [01:23<00:14, 11.11it/s]Testing:  85%|████████▌ | 898/1052 [01:23<00:16,  9.59it/s]
+Proof Accuracy: 99.85416666666667
+
+Testing:  86%|████████▌ | 900/1052 [01:23<00:15,  9.66it/s]Testing:  86%|████████▌ | 902/1052 [01:23<00:15,  9.49it/s]Testing:  86%|████████▌ | 904/1052 [01:23<00:13, 10.98it/s]Testing:  86%|████████▌ | 906/1052 [01:24<00:13, 10.70it/s]Testing:  86%|████████▋ | 908/1052 [01:24<00:13, 10.39it/s]Testing:  87%|████████▋ | 910/1052 [01:24<00:14, 10.03it/s]Testing:  87%|████████▋ | 912/1052 [01:24<00:13, 10.25it/s]Testing:  87%|████████▋ | 914/1052 [01:24<00:12, 11.02it/s]Testing:  87%|████████▋ | 916/1052 [01:25<00:11, 11.67it/s]Testing:  87%|████████▋ | 918/1052 [01:25<00:11, 12.11it/s]
+Proof Accuracy: 99.84375
+
+Testing:  87%|████████▋ | 920/1052 [01:25<00:12, 10.89it/s]Testing:  88%|████████▊ | 923/1052 [01:25<00:10, 11.75it/s]Testing:  88%|████████▊ | 925/1052 [01:25<00:11, 11.22it/s]Testing:  88%|████████▊ | 927/1052 [01:25<00:10, 11.81it/s]Testing:  88%|████████▊ | 929/1052 [01:26<00:11, 11.07it/s]Testing:  88%|████████▊ | 931/1052 [01:26<00:11, 10.23it/s]Testing:  89%|████████▊ | 933/1052 [01:26<00:10, 10.88it/s]Testing:  89%|████████▉ | 935/1052 [01:26<00:10, 11.07it/s]Testing:  89%|████████▉ | 937/1052 [01:26<00:10, 10.89it/s]Testing:  89%|████████▉ | 939/1052 [01:27<00:10, 10.78it/s]
+Proof Accuracy: 99.84707446808511
+
+Testing:  89%|████████▉ | 941/1052 [01:27<00:10, 10.83it/s]Testing:  90%|████████▉ | 943/1052 [01:27<00:09, 10.97it/s]Testing:  90%|████████▉ | 945/1052 [01:27<00:10, 10.31it/s]Testing:  90%|█████████ | 947/1052 [01:27<00:09, 10.97it/s]Testing:  90%|█████████ | 949/1052 [01:27<00:08, 11.72it/s]Testing:  90%|█████████ | 951/1052 [01:28<00:08, 11.29it/s]Testing:  91%|█████████ | 953/1052 [01:28<00:08, 11.97it/s]Testing:  91%|█████████ | 955/1052 [01:28<00:07, 12.50it/s]Testing:  91%|█████████ | 957/1052 [01:28<00:08, 11.85it/s]Testing:  91%|█████████ | 959/1052 [01:28<00:07, 11.78it/s]
+Proof Accuracy: 99.85026041666667
+
+Testing:  91%|█████████▏| 961/1052 [01:28<00:07, 12.53it/s]Testing:  92%|█████████▏| 963/1052 [01:29<00:07, 12.19it/s]Testing:  92%|█████████▏| 965/1052 [01:29<00:07, 12.10it/s]Testing:  92%|█████████▏| 967/1052 [01:29<00:06, 12.26it/s]Testing:  92%|█████████▏| 969/1052 [01:29<00:07, 11.47it/s]Testing:  92%|█████████▏| 971/1052 [01:29<00:07, 10.72it/s]Testing:  92%|█████████▏| 973/1052 [01:30<00:06, 11.46it/s]Testing:  93%|█████████▎| 975/1052 [01:30<00:07, 10.76it/s]Testing:  93%|█████████▎| 977/1052 [01:30<00:07, 10.56it/s]Testing:  93%|█████████▎| 979/1052 [01:30<00:06, 10.97it/s]
+Proof Accuracy: 99.85331632653062
+
+Testing:  93%|█████████▎| 981/1052 [01:30<00:06, 10.86it/s]Testing:  93%|█████████▎| 983/1052 [01:30<00:06, 11.25it/s]Testing:  94%|█████████▎| 985/1052 [01:31<00:05, 12.07it/s]Testing:  94%|█████████▍| 987/1052 [01:31<00:05, 11.22it/s]Testing:  94%|█████████▍| 989/1052 [01:31<00:05, 11.92it/s]Testing:  94%|█████████▍| 991/1052 [01:31<00:05, 10.72it/s]Testing:  94%|█████████▍| 993/1052 [01:31<00:05, 10.80it/s]Testing:  95%|█████████▍| 995/1052 [01:32<00:05, 11.34it/s]Testing:  95%|█████████▍| 997/1052 [01:32<00:04, 11.00it/s]Testing:  95%|█████████▍| 999/1052 [01:32<00:05, 10.55it/s]
+Proof Accuracy: 99.85625
+
+Testing:  95%|█████████▌| 1001/1052 [01:32<00:04, 10.82it/s]Testing:  95%|█████████▌| 1003/1052 [01:32<00:04, 10.60it/s]Testing:  96%|█████████▌| 1005/1052 [01:32<00:04, 11.41it/s]Testing:  96%|█████████▌| 1007/1052 [01:33<00:04, 10.28it/s]Testing:  96%|█████████▌| 1009/1052 [01:33<00:04, 10.57it/s]Testing:  96%|█████████▌| 1011/1052 [01:33<00:03, 10.76it/s]Testing:  96%|█████████▋| 1013/1052 [01:33<00:03, 10.46it/s]Testing:  96%|█████████▋| 1015/1052 [01:33<00:03, 11.02it/s]Testing:  97%|█████████▋| 1017/1052 [01:34<00:03, 11.56it/s]Testing:  97%|█████████▋| 1019/1052 [01:34<00:03, 10.43it/s]
+Proof Accuracy: 99.85906862745098
+
+Testing:  97%|█████████▋| 1021/1052 [01:34<00:02, 10.70it/s]Testing:  97%|█████████▋| 1023/1052 [01:34<00:02, 10.16it/s]Testing:  97%|█████████▋| 1025/1052 [01:34<00:02, 10.51it/s]Testing:  98%|█████████▊| 1027/1052 [01:34<00:02, 11.50it/s]Testing:  98%|█████████▊| 1029/1052 [01:35<00:02, 10.56it/s]Testing:  98%|█████████▊| 1031/1052 [01:35<00:02, 10.19it/s]Testing:  98%|█████████▊| 1033/1052 [01:35<00:01, 11.24it/s]Testing:  98%|█████████▊| 1035/1052 [01:35<00:01, 11.23it/s]Testing:  99%|█████████▊| 1037/1052 [01:35<00:01, 11.70it/s]Testing:  99%|█████████▉| 1039/1052 [01:36<00:01, 11.02it/s]
+Proof Accuracy: 99.86177884615384
+
+Testing:  99%|█████████▉| 1041/1052 [01:36<00:01, 10.69it/s]Testing:  99%|█████████▉| 1043/1052 [01:36<00:00, 11.62it/s]Testing:  99%|█████████▉| 1045/1052 [01:36<00:00, 12.11it/s]Testing: 100%|█████████▉| 1047/1052 [01:36<00:00, 11.69it/s]Testing: 100%|█████████▉| 1049/1052 [01:36<00:00, 10.55it/s]Testing: 100%|█████████▉| 1051/1052 [01:37<00:00,  9.64it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:220: UserWarning: You called `self.log('Graph Cycle Errors: ', ...)` in your `test_epoch_end` but the value needs to be floating point. Converting it to torch.float32.
+  warning_cache.warn(
+--------------------------------------------------------------------------------
+DATALOADER:0 TEST RESULTS
+{'Graph Cycle Errors: ': 0.0,
+ 'test_ans_acc_epoch': 99.86335754394531,
+ 'test_ans_acc_step': 99.88050842285156,
+ 'test_prf_acc_epoch': 99.86335754394531,
+ 'test_prf_acc_step': 99.88050842285156}
+--------------------------------------------------------------------------------
+Testing: 100%|██████████| 1052/1052 [01:37<00:00, 10.77it/s]
+Time Taken for experiment fairr_inference_pwur_leq_3_eq_0_name$attr_OWA_None_05_12_2023_bec5785f: 0.059453503953086004h

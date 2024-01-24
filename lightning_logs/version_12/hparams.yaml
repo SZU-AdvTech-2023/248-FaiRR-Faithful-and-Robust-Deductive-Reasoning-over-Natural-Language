@@ -1,0 +1,14 @@
+arch: t5_large
+train_batch_size: 16
+eval_batch_size: 16
+accumulate_grad_batches: 4
+learning_rate: 0.001
+max_epochs: 10
+optimizer: adafactor
+adam_epsilon: 1.0e-08
+weight_decay: 0.0
+lr_scheduler: fixed
+warmup_updates: 0
+freeze_epochs: -1
+gpus: 1
+hf_name: t5-large

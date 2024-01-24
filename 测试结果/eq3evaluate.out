@@ -1,0 +1,156 @@
+nohup: ignoring input
+/home/data1/linkiling/wjn/FaiRR-main/main.py:40: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  initialize(config_path="./configs/")
+Global seed set to 42
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+Some weights of the model checkpoint at roberta-large were not used when initializing RobertaModel: ['lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight', 'lm_head.dense.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Some weights of the model checkpoint at roberta-large were not used when initializing RobertaModel: ['lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight', 'lm_head.dense.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Some weights of the model checkpoint at roberta-large were not used when initializing RobertaModel: ['lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight', 'lm_head.dense.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Some weights of the model checkpoint at roberta-large were not used when initializing RobertaModel: ['lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.layer_norm.bias', 'lm_head.decoder.weight', 'lm_head.dense.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+Composed hydra config:
+
+ scheduler:
+  lr_scheduler: fixed
+  warmup_updates: 0
+optimizer:
+  optimizer: adamw
+  weight_decay: 0.01
+  adam_epsilon: 1.0e-08
+  gradient_clip_val: 0
+model:
+  model: fairr_inference
+  arch: null
+  hf_name: null
+dataset:
+  dataset: pwq_leq_0to3_OWA_rule
+  train_dataset: pwq_leq_0to3_OWA_rule
+  dev_dataset: pwq_leq_0to3_OWA_rule
+  test_dataset: pwq_leq_0to3_OWA_rule
+setup:
+  train_batch_size: 16
+  eval_batch_size: 16
+  accumulate_grad_batches: 1
+  num_workers: 8
+  fp16: false
+  gpus: 1
+training:
+  evaluate_ckpt: true
+  eval_splits: test
+seed: 42
+max_epochs: 10
+learning_rate: 0.001
+save_checkpoint: true
+adam_epsilon: 1.0e-06
+weight_decay: 0.0
+
+Building trainer...
+Loading pwu_leq_3_eq_3_OWA dataset
+data being used from the folder = ../data/processed/pwu_leq_3_eq_3/OWA/test/
+Loading fairr_inference - None model...
+{'override': 'fairr_inference,evaluate', 'logger': True, 'checkpoint_callback': None, 'enable_checkpointing': True, 'default_root_dir': None, 'gradient_clip_val': 0, 'gradient_clip_algorithm': None, 'process_position': 0, 'num_nodes': 1, 'num_processes': 1, 'devices': None, 'gpus': 1, 'auto_select_gpus': False, 'tpu_cores': None, 'ipus': None, 'log_gpu_memory': None, 'progress_bar_refresh_rate': None, 'enable_progress_bar': True, 'overfit_batches': 0.0, 'track_grad_norm': -1, 'check_val_every_n_epoch': 1, 'fast_dev_run': False, 'accumulate_grad_batches': 1, 'max_epochs': 10, 'min_epochs': None, 'max_steps': -1, 'min_steps': None, 'max_time': None, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0, 'limit_test_batches': 1.0, 'limit_predict_batches': 1.0, 'val_check_interval': 1.0, 'flush_logs_every_n_steps': None, 'log_every_n_steps': 50, 'accelerator': None, 'strategy': None, 'sync_batchnorm': False, 'precision': 32, 'enable_model_summary': True, 'weights_summary': 'top', 'weights_save_path': None, 'num_sanity_val_steps': 2, 'resume_from_checkpoint': None, 'profiler': None, 'benchmark': False, 'deterministic': False, 'reload_dataloaders_every_n_epochs': 0, 'reload_dataloaders_every_epoch': False, 'auto_lr_find': False, 'replace_sampler_ddp': True, 'detect_anomaly': False, 'auto_scale_batch_size': False, 'prepare_data_per_node': None, 'plugins': None, 'amp_backend': 'native', 'amp_level': None, 'move_metrics_to_cpu': False, 'multiple_trainloader_mode': 'max_size_cycle', 'stochastic_weight_avg': False, 'terminate_on_nan': None, 'optimizer': 'adamw', 'model': 'fairr_inference', 'arch': None, 'hf_name': None, 'padding': 0, 'learning_rate': 0.001, 'adam_epsilon': 1e-06, 'warmup_updates': 0, 'weight_decay': 0.0, 'lr_scheduler': 'fixed', 'freeze_epochs': -1, 'train_batch_size': 16, 'eval_batch_size': 16, 'ruleselector_ckpt': '../saved/fairr_ruleselector_pwq_leq_0to3_OWA_rule_roberta_large_27_11_2023_95030f26/checkpoints/epoch=9-step=112779.ckpt', 'factselector_ckpt': '../saved/fairr_factselector_pwq_leq_0to3_OWA_fact_roberta_large_28_11_2023_c3929f14/checkpoints/epoch=8-step=38978.ckpt', 'reasoner_ckpt': '../saved/fairr_reasoner_pw_leq_0to3_OWA_reasoner_t5_large_28_11_2023_0e237b32/checkpoints/epoch=0-step=976.ckpt', 'cls_dropout': 0.1, 'dataset': 'pwu_leq_3_eq_3_OWA', 'train_dataset': 'pwq_leq_0to3_OWA_rule', 'dev_dataset': 'pwq_leq_0to3_OWA_rule', 'test_dataset': 'pwq_leq_0to3_OWA_rule', 'num_workers': 8, 'seed': 42, 'name': 'fairr_inference_pwu_leq_3_eq_3_OWA_None_04_12_2023_0bc25976', 'log_db': 'manual_runs', 'tag_attrs': 'model,dataset,arch', 'ckpt_path': '', 'eval_splits': 'test', 'debug': False, 'save_checkpoint': True, 'resume_training': False, 'evaluate_ckpt': True, 'fp16': False, 'root_dir': '../saved/fairr_inference_pwu_leq_3_eq_3_OWA_None_04_12_2023_0bc25976'}
+Testing the best model...
+Evaluating on split: test
+Testing: 0it [00:00, ?it/s]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 13. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   1%|          | 1/176 [00:02<08:14,  2.83s/it]Testing:   1%|          | 2/176 [00:04<06:56,  2.39s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 14. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   2%|▏         | 3/176 [00:05<06:15,  2.17s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 16. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   2%|▏         | 4/176 [00:07<05:49,  2.03s/it]Testing:   3%|▎         | 5/176 [00:09<05:41,  2.00s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 28. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   3%|▎         | 6/176 [00:11<05:31,  1.95s/it]Testing:   4%|▍         | 7/176 [00:12<05:00,  1.78s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 22. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   5%|▍         | 8/176 [00:14<05:23,  1.93s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 24. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   5%|▌         | 9/176 [00:16<05:23,  1.94s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 29. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   6%|▌         | 10/176 [00:19<05:53,  2.13s/it]Testing:   6%|▋         | 11/176 [00:20<05:15,  1.91s/it]Testing:   7%|▋         | 12/176 [00:22<04:58,  1.82s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 32. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   7%|▋         | 13/176 [00:24<04:54,  1.81s/it]Testing:   8%|▊         | 14/176 [00:26<05:12,  1.93s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 17. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   9%|▊         | 15/176 [00:27<04:40,  1.74s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 31. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:   9%|▉         | 16/176 [00:29<04:46,  1.79s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 21. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  10%|▉         | 17/176 [00:31<04:30,  1.70s/it]Testing:  10%|█         | 18/176 [00:32<04:13,  1.60s/it]Testing:  11%|█         | 19/176 [00:34<04:20,  1.66s/it]
+Proof Accuracy: 93.125
+
+Testing:  11%|█▏        | 20/176 [00:36<04:39,  1.79s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 15. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  12%|█▏        | 21/176 [00:37<04:19,  1.68s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 35. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  12%|█▎        | 22/176 [00:39<04:25,  1.73s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 23. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  13%|█▎        | 23/176 [00:41<04:33,  1.79s/it]Testing:  14%|█▎        | 24/176 [00:43<04:15,  1.68s/it]Testing:  14%|█▍        | 25/176 [00:44<04:16,  1.70s/it]Testing:  15%|█▍        | 26/176 [00:46<04:20,  1.74s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 12. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  15%|█▌        | 27/176 [00:48<04:14,  1.71s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 19. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  16%|█▌        | 28/176 [00:50<04:16,  1.73s/it]Testing:  16%|█▋        | 29/176 [00:51<04:10,  1.70s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 26. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  17%|█▋        | 30/176 [00:53<04:22,  1.80s/it]Testing:  18%|█▊        | 31/176 [00:54<03:55,  1.62s/it]Testing:  18%|█▊        | 32/176 [00:56<03:43,  1.55s/it]Testing:  19%|█▉        | 33/176 [00:58<03:47,  1.59s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 11. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  19%|█▉        | 34/176 [00:59<03:48,  1.61s/it]Testing:  20%|█▉        | 35/176 [01:02<04:21,  1.85s/it]Testing:  20%|██        | 36/176 [01:04<04:32,  1.95s/it]Testing:  21%|██        | 37/176 [01:06<04:30,  1.94s/it]Testing:  22%|██▏       | 38/176 [01:09<05:36,  2.44s/it]Testing:  22%|██▏       | 39/176 [01:11<05:05,  2.23s/it]
+Proof Accuracy: 93.59375
+
+Testing:  23%|██▎       | 40/176 [01:13<04:43,  2.09s/it]Testing:  23%|██▎       | 41/176 [01:14<04:23,  1.96s/it]Testing:  24%|██▍       | 42/176 [01:16<04:23,  1.97s/it]Testing:  24%|██▍       | 43/176 [01:18<04:12,  1.90s/it]Testing:  25%|██▌       | 44/176 [01:20<04:02,  1.84s/it]Testing:  26%|██▌       | 45/176 [01:22<04:19,  1.98s/it]Testing:  26%|██▌       | 46/176 [01:24<04:01,  1.86s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 30. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  27%|██▋       | 47/176 [01:26<03:59,  1.86s/it]Testing:  27%|██▋       | 48/176 [01:27<03:38,  1.71s/it]Testing:  28%|██▊       | 49/176 [01:29<04:03,  1.92s/it]Testing:  28%|██▊       | 50/176 [01:31<03:52,  1.84s/it]Testing:  29%|██▉       | 51/176 [01:33<03:59,  1.91s/it]Testing:  30%|██▉       | 52/176 [01:35<03:38,  1.76s/it]Testing:  30%|███       | 53/176 [01:36<03:10,  1.55s/it]Testing:  31%|███       | 54/176 [01:38<03:26,  1.69s/it]Testing:  31%|███▏      | 55/176 [01:39<03:28,  1.73s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 20. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  32%|███▏      | 56/176 [01:41<03:25,  1.71s/it]Testing:  32%|███▏      | 57/176 [01:45<04:43,  2.38s/it]Testing:  33%|███▎      | 58/176 [01:47<04:25,  2.25s/it]Testing:  34%|███▎      | 59/176 [01:48<03:43,  1.91s/it]
+Proof Accuracy: 93.85416666666667
+
+Testing:  34%|███▍      | 60/176 [01:50<03:39,  1.89s/it]Testing:  35%|███▍      | 61/176 [01:52<03:29,  1.82s/it]Testing:  35%|███▌      | 62/176 [01:53<03:29,  1.84s/it]Testing:  36%|███▌      | 63/176 [01:55<03:20,  1.77s/it]Testing:  36%|███▋      | 64/176 [01:57<03:29,  1.87s/it]Testing:  37%|███▋      | 65/176 [01:59<03:25,  1.85s/it]Testing:  38%|███▊      | 66/176 [02:01<03:31,  1.92s/it]Testing:  38%|███▊      | 67/176 [02:03<03:23,  1.87s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 27. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  39%|███▊      | 68/176 [02:04<03:12,  1.78s/it]Testing:  39%|███▉      | 69/176 [02:07<03:43,  2.09s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 18. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  40%|███▉      | 70/176 [02:10<03:50,  2.18s/it]Testing:  40%|████      | 71/176 [02:12<03:47,  2.16s/it]Testing:  41%|████      | 72/176 [02:14<03:40,  2.12s/it]Testing:  41%|████▏     | 73/176 [02:16<03:37,  2.11s/it]Testing:  42%|████▏     | 74/176 [02:18<03:31,  2.07s/it]Testing:  43%|████▎     | 75/176 [02:20<03:22,  2.00s/it]Testing:  43%|████▎     | 76/176 [02:22<03:37,  2.18s/it]Testing:  44%|████▍     | 77/176 [02:24<03:33,  2.15s/it]Testing:  44%|████▍     | 78/176 [02:26<03:11,  1.96s/it]Testing:  45%|████▍     | 79/176 [02:29<03:34,  2.21s/it]
+Proof Accuracy: 93.828125
+
+Testing:  45%|████▌     | 80/176 [02:30<03:17,  2.06s/it]Testing:  46%|████▌     | 81/176 [02:33<03:30,  2.22s/it]Testing:  47%|████▋     | 82/176 [02:35<03:22,  2.15s/it]Testing:  47%|████▋     | 83/176 [02:37<03:06,  2.00s/it]Testing:  48%|████▊     | 84/176 [02:38<02:52,  1.87s/it]Testing:  48%|████▊     | 85/176 [02:40<02:49,  1.86s/it]Testing:  49%|████▉     | 86/176 [02:42<02:46,  1.85s/it]Testing:  49%|████▉     | 87/176 [02:44<02:44,  1.85s/it]Testing:  50%|█████     | 88/176 [02:45<02:40,  1.82s/it]Testing:  51%|█████     | 89/176 [02:48<02:45,  1.90s/it]Testing:  51%|█████     | 90/176 [02:50<02:47,  1.95s/it]Testing:  52%|█████▏    | 91/176 [02:51<02:31,  1.78s/it]Testing:  52%|█████▏    | 92/176 [02:53<02:30,  1.79s/it]Testing:  53%|█████▎    | 93/176 [02:54<02:20,  1.70s/it]Testing:  53%|█████▎    | 94/176 [02:56<02:23,  1.75s/it]Testing:  54%|█████▍    | 95/176 [02:59<02:49,  2.09s/it]Testing:  55%|█████▍    | 96/176 [03:00<02:28,  1.85s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 38. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  55%|█████▌    | 97/176 [03:02<02:31,  1.92s/it]Testing:  56%|█████▌    | 98/176 [03:04<02:25,  1.86s/it]Testing:  56%|█████▋    | 99/176 [03:05<02:10,  1.70s/it]
+Proof Accuracy: 93.875
+
+Testing:  57%|█████▋    | 100/176 [03:07<02:06,  1.67s/it]Testing:  57%|█████▋    | 101/176 [03:09<02:05,  1.68s/it]Testing:  58%|█████▊    | 102/176 [03:10<01:56,  1.58s/it]Testing:  59%|█████▊    | 103/176 [03:12<01:51,  1.53s/it]Testing:  59%|█████▉    | 104/176 [03:15<02:39,  2.21s/it]Testing:  60%|█████▉    | 105/176 [03:17<02:28,  2.10s/it]Testing:  60%|██████    | 106/176 [03:18<02:10,  1.86s/it]Testing:  61%|██████    | 107/176 [03:20<02:05,  1.82s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 33. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  61%|██████▏   | 108/176 [03:23<02:17,  2.02s/it]Testing:  62%|██████▏   | 109/176 [03:26<02:32,  2.28s/it]Testing:  62%|██████▎   | 110/176 [03:27<02:17,  2.08s/it]Testing:  63%|██████▎   | 111/176 [03:29<02:10,  2.01s/it]Testing:  64%|██████▎   | 112/176 [03:31<02:04,  1.95s/it]Testing:  64%|██████▍   | 113/176 [03:32<01:48,  1.72s/it]Testing:  65%|██████▍   | 114/176 [03:34<01:48,  1.74s/it]Testing:  65%|██████▌   | 115/176 [03:35<01:38,  1.61s/it]Testing:  66%|██████▌   | 116/176 [03:37<01:40,  1.68s/it]Testing:  66%|██████▋   | 117/176 [03:38<01:33,  1.59s/it]Testing:  67%|██████▋   | 118/176 [03:41<01:43,  1.79s/it]Testing:  68%|██████▊   | 119/176 [03:42<01:34,  1.66s/it]
+Proof Accuracy: 94.0625
+
+Testing:  68%|██████▊   | 120/176 [03:43<01:25,  1.54s/it]Testing:  69%|██████▉   | 121/176 [03:45<01:24,  1.54s/it]Testing:  69%|██████▉   | 122/176 [03:47<01:35,  1.77s/it]Testing:  70%|██████▉   | 123/176 [03:49<01:38,  1.85s/it]Testing:  70%|███████   | 124/176 [03:51<01:31,  1.76s/it]Testing:  71%|███████   | 125/176 [03:52<01:27,  1.72s/it]Testing:  72%|███████▏  | 126/176 [03:54<01:26,  1.72s/it]Testing:  72%|███████▏  | 127/176 [03:56<01:35,  1.94s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/utilities/data.py:59: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 25. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+Testing:  73%|███████▎  | 128/176 [03:58<01:33,  1.95s/it]Testing:  73%|███████▎  | 129/176 [04:00<01:28,  1.88s/it]Testing:  74%|███████▍  | 130/176 [04:02<01:24,  1.83s/it]Testing:  74%|███████▍  | 131/176 [04:03<01:19,  1.76s/it]Testing:  75%|███████▌  | 132/176 [04:05<01:21,  1.85s/it]Testing:  76%|███████▌  | 133/176 [04:07<01:16,  1.78s/it]Testing:  76%|███████▌  | 134/176 [04:09<01:16,  1.81s/it]Testing:  77%|███████▋  | 135/176 [04:11<01:14,  1.82s/it]Testing:  77%|███████▋  | 136/176 [04:12<01:09,  1.74s/it]Testing:  78%|███████▊  | 137/176 [04:14<01:05,  1.69s/it]Testing:  78%|███████▊  | 138/176 [04:16<01:13,  1.94s/it]Testing:  79%|███████▉  | 139/176 [04:18<01:11,  1.92s/it]
+Proof Accuracy: 93.88392857142857
+
+Testing:  80%|███████▉  | 140/176 [04:21<01:11,  2.00s/it]Testing:  80%|████████  | 141/176 [04:23<01:11,  2.04s/it]Testing:  81%|████████  | 142/176 [04:25<01:11,  2.09s/it]Testing:  81%|████████▏ | 143/176 [04:27<01:09,  2.11s/it]Testing:  82%|████████▏ | 144/176 [04:28<00:58,  1.82s/it]Testing:  82%|████████▏ | 145/176 [04:30<00:52,  1.69s/it]Testing:  83%|████████▎ | 146/176 [04:31<00:48,  1.61s/it]Testing:  84%|████████▎ | 147/176 [04:33<00:53,  1.84s/it]Testing:  84%|████████▍ | 148/176 [04:35<00:47,  1.69s/it]Testing:  85%|████████▍ | 149/176 [04:36<00:42,  1.58s/it]Testing:  85%|████████▌ | 150/176 [04:38<00:42,  1.64s/it]Testing:  86%|████████▌ | 151/176 [04:40<00:43,  1.74s/it]Testing:  86%|████████▋ | 152/176 [04:41<00:39,  1.66s/it]Testing:  87%|████████▋ | 153/176 [04:43<00:39,  1.70s/it]Testing:  88%|████████▊ | 154/176 [04:45<00:38,  1.75s/it]Testing:  88%|████████▊ | 155/176 [04:48<00:42,  2.03s/it]Testing:  89%|████████▊ | 156/176 [04:49<00:39,  1.97s/it]Testing:  89%|████████▉ | 157/176 [04:51<00:35,  1.89s/it]Testing:  90%|████████▉ | 158/176 [04:53<00:33,  1.85s/it]Testing:  90%|█████████ | 159/176 [04:54<00:28,  1.70s/it]
+Proof Accuracy: 94.1796875
+
+Testing:  91%|█████████ | 160/176 [04:56<00:26,  1.66s/it]Testing:  91%|█████████▏| 161/176 [04:58<00:28,  1.88s/it]Testing:  92%|█████████▏| 162/176 [05:01<00:28,  2.02s/it]Testing:  93%|█████████▎| 163/176 [05:03<00:26,  2.05s/it]Testing:  93%|█████████▎| 164/176 [05:04<00:23,  1.95s/it]Testing:  94%|█████████▍| 165/176 [05:06<00:20,  1.87s/it]Testing:  94%|█████████▍| 166/176 [05:07<00:16,  1.68s/it]Testing:  95%|█████████▍| 167/176 [05:09<00:14,  1.66s/it]Testing:  95%|█████████▌| 168/176 [05:11<00:14,  1.77s/it]Testing:  96%|█████████▌| 169/176 [05:12<00:11,  1.70s/it]Testing:  97%|█████████▋| 170/176 [05:14<00:09,  1.61s/it]Testing:  97%|█████████▋| 171/176 [05:15<00:07,  1.58s/it]Testing:  98%|█████████▊| 172/176 [05:17<00:06,  1.56s/it]Testing:  98%|█████████▊| 173/176 [05:19<00:04,  1.58s/it]Testing:  99%|█████████▉| 174/176 [05:20<00:03,  1.69s/it]Testing:  99%|█████████▉| 175/176 [05:22<00:01,  1.63s/it]Testing: 100%|██████████| 176/176 [05:24<00:00,  1.81s/it]/home/data1/linkiling/.conda/envs/wjn_py_3.9/lib/python3.9/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:220: UserWarning: You called `self.log('Graph Cycle Errors: ', ...)` in your `test_epoch_end` but the value needs to be floating point. Converting it to torch.float32.
+  warning_cache.warn(
+--------------------------------------------------------------------------------
+DATALOADER:0 TEST RESULTS
+{'Graph Cycle Errors: ': 2.0,
+ 'test_ans_acc_epoch': 96.69744873046875,
+ 'test_ans_acc_step': 96.55426788330078,
+ 'test_prf_acc_epoch': 94.24716186523438,
+ 'test_prf_acc_step': 94.0414047241211}
+--------------------------------------------------------------------------------
+Testing: 100%|██████████| 176/176 [05:24<00:00,  1.84s/it]
+Time Taken for experiment fairr_inference_pwu_leq_3_eq_3_OWA_None_04_12_2023_0bc25976: 0.12049371818701426h

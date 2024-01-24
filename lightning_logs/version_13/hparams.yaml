@@ -1,0 +1,16 @@
+ruleselector_ckpt: ../saved/fairr_ruleselector_pwq_leq_0to3_OWA_rule_roberta_large_27_11_2023_95030f26/checkpoints/epoch=9-step=112779.ckpt
+factselector_ckpt: ../saved/fairr_factselector_pwq_leq_0to3_OWA_fact_roberta_large_28_11_2023_c3929f14/checkpoints/epoch=8-step=38978.ckpt
+reasoner_ckpt: ../saved/fairr_reasoner_pw_leq_0to3_OWA_reasoner_t5_large_28_11_2023_0e237b32/checkpoints/epoch=0-step=976.ckpt
+arch: null
+train_batch_size: 16
+eval_batch_size: 16
+accumulate_grad_batches: 1
+learning_rate: 0.001
+max_epochs: 10
+optimizer: adamw
+adam_epsilon: 1.0e-06
+weight_decay: 0.0
+lr_scheduler: fixed
+warmup_updates: 0
+freeze_epochs: -1
+gpus: 1
